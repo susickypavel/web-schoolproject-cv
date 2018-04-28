@@ -1,0 +1,5 @@
+# dist
+dist
+# vendors
+node_modules
+.vscode
