@@ -8,21 +8,29 @@ export  default class extends React.Component<IProps> {
     render() {
         return(
             <div>
-                <div className="jumbotron">
-                    Haha
-                </div>
-                <div className="row">
-                    <div className="col-sm red">
-                        TeST
-                    </div>
-                    <div className="col-sm lime">
-                        TeST
-                    </div>
-                    <div className="col-sm blue">
-                        BLUE
-                    </div>
-                </div>
+                .
             </div>
         );
     }
 }
+
+const TimeLine = () => {
+    return(
+        <div className="container">
+            <ul>
+                <li className="info">
+                    <span>29.01.2001</span>
+                    <div>This is the latest news</div>
+                </li>
+                <li className="selected">
+                    <span>39 min</span>
+                    <div>This is the second latest news</div>
+                </li>
+                <li>
+                    <span>42 min</span>
+                    <div>This is the third latest news</div>
+                </li>
+            </ul>
+        </div>
+    );
+};
