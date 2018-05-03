@@ -7,8 +7,16 @@ interface IProps {
 export  default class extends React.Component<IProps> {
     render() {
         return(
-            <div>
-                .
+            <div className="homePage">
+                <div className="homepage__personality jumbotron container">
+                    <h1>Hi, i'm Pavel Sušický</h1>
+                    <p className="lead">Young web developer from Czech Republic!</p>
+                    <ul className="personality__links">
+                        <li>LINK</li>
+                        <li>LINK</li>
+                        <li>LINK</li>
+                    </ul>
+                </div>
             </div>
         );
     }

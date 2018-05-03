@@ -1,4 +1,5 @@
 import * as React from "react";
+import { NavLink } from "react-router-dom";
 
 interface IProps {
 
@@ -10,21 +11,21 @@ export default class extends React.Component<IProps> {
             <nav className="navigation">
                 <ul className="navigation__ul">
                     <li>
-                        <div className="navigation__item">
-                            <p>TEST</p>
-                            <img src={require("../assets/emoji.png")} alt=""/>
-                        </div>
-                        <div className="navigation__item">
-                            <p>TEST</p>
-                            <img src={require("../assets/emoji.png")} alt=""/>
-                        </div>
-                        <div className="navigation__item">
-                            <p>TEST</p>
-                            <img src={require("../assets/emoji.png")} alt=""/>
-                        </div>
+                        <Link name="HOME" path="/" img="homepage"/>
+                        <Link name="CONTACT" path="/contact" img="contact"/>
+                        <Link name="MY WORK" path="/projects" img="project"/>
                     </li>
                 </ul>
             </nav>
         );
     }
 }
+
+const Link = (props: any) => {
+    return(
+        <NavLink exact={true} to={props.path} className="navigation__item" activeClassName="activeNavLink">
+            <p>{props.name}</p>
+            <img src={require(`../assets/icons/${props.img}.svg`)} alt={props.img}  width="65" height="65" className="navLinkImg"/>
+        </NavLink>
+    );
+};
