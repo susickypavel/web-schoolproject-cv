@@ -12,7 +12,7 @@ export default class Index extends React.Component {
                 <div>
                     <Navigation />
                     <Switch>
-                        <Route path="/" component={Homepage}/>
+                        <Route exact={true} path="/" component={Homepage}/>
                     </Switch>
                 </div>
             </BrowserRouter>

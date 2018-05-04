@@ -8,7 +8,6 @@
 
 body {
     margin: 0;
-
     overflow: hidden;
 }
 
@@ -77,9 +76,33 @@ nav {
 }
 
 .personality__links {
+    padding: 0;
     list-style-type: none;
 }
 
-.personality__links li {
+.personality__links li a {
+    border: 1px solid black;
+
     display: inline-block;
+}
+
+.personality__link {
+    opacity: 0.5;
+    transition: opacity, background 0.2s ease-in-out;
+    padding: 12px;
+}
+
+.personality__link:hover {
+    background: violet;
+    opacity: 1;
+}
+
+.personality__popup--shown {
+    .personality__popup;
+    visibility: visible;
+}
+
+.personality__popup {
+   visibility: hidden;
+   background: cyan;
 }

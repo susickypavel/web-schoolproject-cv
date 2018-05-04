@@ -1,5 +1,7 @@
 import * as React from "react";
 
+import Link from "./sociallink.component";
+
 interface IProps {
 
 }
@@ -12,9 +14,7 @@ export  default class extends React.Component<IProps> {
                     <h1>Hi, i'm Pavel Sušický</h1>
                     <p className="lead">Young web developer from Czech Republic!</p>
                     <ul className="personality__links">
-                        <li>LINK</li>
-                        <li>LINK</li>
-                        <li>LINK</li>
+                        <Link name="mail" tip="pavels.sus@gmail.com"/>
                     </ul>
                 </div>
             </div>
