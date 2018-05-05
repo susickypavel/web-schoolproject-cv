@@ -3,6 +3,8 @@ import * as React from "react";
 interface IProps {
     name: string;
     tip: string;
+    color: string;
+    link: string;
 }
 
 interface IState {
@@ -37,8 +39,8 @@ export default class extends React.Component<IProps, IState> {
         return(
             <li>
                 <div className={this.state.activeClass}>{this.props.tip}</div>
-                <a href="#" onMouseEnter={this.switchOnPopUp} onMouseLeave={this.switchOffPopUp}>
-                    <img src={require(`../assets/icons/social/${this.props.name}.svg`)} alt={this.props.name} width="48" height="48" className="personality__link" />
+                <a href={this.props.link} onMouseEnter={this.switchOnPopUp} onMouseLeave={this.switchOffPopUp}>
+                    <img src={require(`../assets/icons/social/${this.props.name}.svg`)} alt={this.props.name} width="48" height="48" className={`personality__link ${this.props.color}`} />
                 </a>
             </li>
         );

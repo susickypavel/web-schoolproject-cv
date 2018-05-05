@@ -7,6 +7,7 @@
 @tomato: #F06543;
 
 body {
+    background: @tomato;
     margin: 0;
     overflow: hidden;
 }
@@ -73,11 +74,18 @@ nav {
     padding: 16px;
 
     border: 1px solid black;
+    margin-top: 25px;
 }
 
 .personality__links {
     padding: 0;
+    margin: 0;
     list-style-type: none;
+}
+
+.personality__links li {
+    display: inline-block;
+    margin: 0px -70px;
 }
 
 .personality__links li a {
@@ -90,19 +98,61 @@ nav {
     opacity: 0.5;
     transition: opacity, background 0.2s ease-in-out;
     padding: 12px;
-}
 
-.personality__link:hover {
-    background: violet;
-    opacity: 1;
+    position: relative;
+    z-index: 1000;
 }
 
 .personality__popup--shown {
     .personality__popup;
     visibility: visible;
+    animation: fadeIn 0.5s;
 }
 
 .personality__popup {
-   visibility: hidden;
-   background: cyan;
+    visibility: hidden;
+    width: 200px;
+    padding: 8px;
+    border-radius: 8px;
+    margin: 5px auto;
+    margin-bottom: 16px;
+    font: 18px roboto-regular;
+    color: @coolwhite;
+    background: @coolblack;
+    border: 3px solid lightgray;
+
+    position: relative;
+}
+
+.personality__popup--shown:after, .personality__popup--shown:before {
+    top: 100%;
+    left: 50%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+}
+
+.personality__popup--shown:after {
+    border-color: rgba(136, 183, 213, 0);
+    border-top-color: @coolblack;
+    border-width: 8px;
+    margin-left: -8px;
+}
+.personality__popup--shown:before {
+    border-color: rgba(194, 225, 245, 0);
+    border-top-color: lightgray;
+    border-width: 14px;
+    margin-left: -14px;
+}
+
+.red:hover { background: red; opacity: 1; }
+.lime:hover { background: lime; opacity: 1; }
+.cyan:hover { background: cyan; opacity: 1; }
+
+@keyframes fadeIn {
+    from { transform: scaleX(0); }
+    to { transform: scaleX(1); }
 }
