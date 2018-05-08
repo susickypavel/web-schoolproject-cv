@@ -1,7 +1,7 @@
 import * as React from "react";
 
 import Link from "./sociallink.component";
-import Timeline from "./timeline.component";
+import Ticket from "./ticket.component";
 
 interface IProps {
 
@@ -11,7 +11,7 @@ export  default class extends React.Component<IProps> {
     render() {
         return(
             <div className="homePage">
-                <div className="homepage__personality jumbotron container shadow p-3 mb-5 bg-white rounded">
+                <div className="jumbotron container shadow homepage__personality">
                     <h1>Hi, i'm Pavel Sušický</h1>
                     <p className="lead">Young web developer from Czech Republic!</p>
                     <hr/>
@@ -22,7 +22,7 @@ export  default class extends React.Component<IProps> {
                     </ul>
                 </div>
 
-                <Timeline />
+                <Ticket />
 
             </div>
         );

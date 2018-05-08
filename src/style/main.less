@@ -156,3 +156,51 @@ nav {
     from { transform: scaleX(0); }
     to { transform: scaleX(1); }
 }
+
+.ticket {
+    border: 1px solid black;
+    transition: box-shadow, transform 0.1s linear;
+
+    min-height: 375px;
+}
+
+.ticket:hover {
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
+    transform: translateY(-5px);
+}
+
+.ticket:hover .ticket__link {
+    opacity: 1;
+}
+
+.ticket:hover .ticket__paragraph {
+    height: 0px;
+}
+
+.ticket__paragraph {
+    height: 150px;
+
+    font: 20px roboto-light;
+
+    overflow-y: hidden;
+    transition: height 0.2s ease-in-out;
+}
+
+.ticket__link {
+    opacity: 0;
+
+    font: 28px roboto-regular;
+
+    transition: opacity 0.15s linear;
+}
+
+.ticket__link:hover {
+    text-decoration: none;
+}
+
+/* BOOTSTRAP OVERRIDE */
+.jumbotron {
+    border-radius: 0px !important;
+}
+
+@import "responsive.less";
