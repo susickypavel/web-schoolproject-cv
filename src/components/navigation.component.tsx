@@ -1,11 +1,7 @@
 import * as React from "react";
 import { NavLink } from "react-router-dom";
 
-interface IProps {
-
-}
-
-export default class extends React.Component<IProps> {
+export default class extends React.Component {
     render() {
         return(
             <nav className="navigation">

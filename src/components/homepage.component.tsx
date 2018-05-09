@@ -3,11 +3,7 @@ import * as React from "react";
 import Link from "./sociallink.component";
 import Ticket from "./ticket.component";
 
-interface IProps {
-
-}
-
-export  default class extends React.Component<IProps> {
+export  default class extends React.Component {
     render() {
         return(
             <div className="homePage">
