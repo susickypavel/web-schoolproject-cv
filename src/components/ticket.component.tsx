@@ -1,33 +1,35 @@
 import * as React from "react";
 import { Link } from "react-router-dom";
 
-import { ticketContent } from "../content";
-
 // TODO
 // For mobiles is "read more" not quite user experience friendly
 // Try to make another version for mobiles (maybe?)
 // MAYBE -> To let be read more visible whole time.
 
-
 // TODO
 // Make a component connected to redux store and get content for each
 // Ticket from redux state.
 
-export default class Ticket extends React.Component {
+interface IProps {
+    name: string;
+    content: string;
+}
+
+export class TicketModal extends React.Component<IProps> {
     render() {
         return(
-            <div className="container">
-                <div className="row">
-                    <TicketMaker offset="" name="LD40" badgeType="info" badge="GAME" content={ticketContent.ld40} />
-                    <TicketMaker offset="offset-md-1" name="LD39" badgeType="info" badge="GAME" content={ticketContent.ld39} />
-                    <TicketMaker offset="offset-md-1" name="SCHOOL" badgeType="secondary" badge="WEB" content={ticketContent.schoolweb} />
-                </div>
+            <div>
+                <h1>{this.props.name}</h1>
+
+                <p>
+                    {this.props.content}
+                </p>
             </div>
         );
     }
 }
 
-const TicketMaker = (props: any) => {
+export const Ticket = (props: any) => {
     return(
         <div className={`col-sm jumbotron ticket ${props.offset}`}>
             <h2>{props.name} <span className={`badge badge-${props.badgeType}`}>{props.badge}</span></h2>

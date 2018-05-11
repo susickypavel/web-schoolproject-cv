@@ -8,8 +8,9 @@ export default class extends React.Component {
                 <ul className="navigation__ul">
                     <li>
                         <Link name="HOME" path="/" img="homepage"/>
-                        <Link name="CONTACT" path="/contact" img="contact"/>
                         <Link name="MY WORK" path="/projects" img="project"/>
+                        <Link name="ABOUT" path="/about" img="profile"/>
+                        <Link name="CONTACT" path="/contact" img="contact"/>
                     </li>
                 </ul>
             </nav>

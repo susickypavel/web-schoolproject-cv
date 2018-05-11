@@ -1,7 +1,9 @@
 import * as React from "react";
 
 import Link from "./sociallink.component";
-import Ticket from "./ticket.component";
+import { Ticket } from "./ticket.component";
+
+import { ticketContent } from "../content";
 
 export  default class extends React.Component {
     render() {
@@ -18,7 +20,13 @@ export  default class extends React.Component {
                     </ul>
                 </div>
 
-                <Ticket />
+                <div className="container">
+                    <div className="row">
+                        <Ticket offset="" name="LD40" badgeType="info" badge="GAME" content={ticketContent[0].content} />
+                        <Ticket offset="offset-md-1" name="LD39" badgeType="info" badge="GAME" content={ticketContent[1].content} />
+                        <Ticket offset="offset-md-1" name="SCHOOL" badgeType="secondary" badge="WEB" content={ticketContent[2].content} />
+                    </div>
+                </div>
 
             </div>
         );
