@@ -1,13 +1,17 @@
 import * as React from "react";
+import { connect } from "react-redux";
 
 import { TicketModal } from "./ticket.component";
-import { ticketContent } from "../content";
 
-export default class ProjectPage extends React.Component {
+interface IProps {
+    tickets: object[];
+}
+
+class ProjectPage extends React.Component<IProps> {
 
     renderTickets() {
         return(
-            ticketContent.map((ticket) => {
+            this.props.tickets.map((ticket: any) => {
                 return <TicketModal name={ticket.name} content={ticket.content} key={ticket.name}/>;
             })
         );
@@ -22,3 +26,11 @@ export default class ProjectPage extends React.Component {
         );
     }
 }
+
+function mapStateToProps(state: any) {
+    return {
+        tickets: state.ticketList
+    };
+}
+
+export default connect(mapStateToProps)(ProjectPage);

@@ -22,7 +22,7 @@ const Link = (props: any) => {
     return(
         <NavLink exact={true} to={props.path} className="navigation__item" activeClassName="activeNavLink">
             <p>{props.name}</p>
-            <img src={require(`../assets/icons/${props.img}.svg`)} alt={props.img}  width="65" height="65" className="navLinkImg"/>
+            <img src={require(`../assets/icons/${props.img}.svg`)} alt={props.img} width="65" height="65" className="navLinkImg"/>
         </NavLink>
     );
 };

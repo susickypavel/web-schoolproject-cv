@@ -1,11 +1,13 @@
 import { combineReducers } from "redux";
 
+import ticketReducer from "./ticketlist.reducer";
+
 export interface IState {
-    // authenticated: boolean;
+
 }
 
 const rootReducer = combineReducers({
-    state: (state = {}) => state
+    ticketList: ticketReducer
 });
 
 export default rootReducer;
