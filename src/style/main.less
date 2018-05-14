@@ -202,6 +202,67 @@ nav {
     height: 150px;
 }
 
+/* Spinner */
+
+.spinner {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+
+    top: 0;
+    left: 0;
+
+    z-index: 1050;
+
+    background: rgba(0, 0, 0, 0.5);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.spinner-holder {
+    background: @coolgray;
+    width: 300px;
+    height: 300px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+
+    border: 2px solid @coolblack;
+}
+
+.spinner-holder p {
+    font: 20px roboto-regular;
+}
+
+.spinner-circle {
+    width: 75px;
+    height: 75px;
+    border: 3px solid white;
+    border-left: 3px solid @coolblack;
+
+    border-radius: 100%;
+
+    animation: spin 1s infinite linear;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    
+    45% {
+        transform: rotate(270deg);
+    }
+    
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
 /* BOOTSTRAP OVERRIDE */
 .jumbotron {
     border-radius: 0px !important;
