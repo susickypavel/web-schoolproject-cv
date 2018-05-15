@@ -14,6 +14,14 @@ body {
 
 /* NAVIGATION */
 
+.collapse-menu {
+    display: none;
+
+    text-align: center;
+
+    font-size: 32px;
+}
+
 nav {
     background: @coolgray;
 
@@ -27,6 +35,10 @@ nav {
     padding: 0;
 
     list-style-type: none;
+}
+
+.navigation__ul li {
+    float: left;
 }
 
 .navigation__item {
@@ -232,6 +244,7 @@ nav {
     flex-direction: column;
 
     border: 2px solid @coolblack;
+    text-align: center;
 }
 
 .spinner-holder p {

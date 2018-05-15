@@ -39,7 +39,7 @@ export default class ContactPage extends React.Component<Props, State> {
             <div className="spinner">
                 <div className="spinner-holder">
                     <div className="spinner-circle" />
-                    <p>This might take a few seconds</p>
+                    <p>Hold on please, we're sending your message</p>
                 </div>
             </div>
         );

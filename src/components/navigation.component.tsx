@@ -1,17 +1,45 @@
 import * as React from "react";
 import { NavLink } from "react-router-dom";
 
-export default class extends React.Component {
+interface State {
+    collapsed: boolean;
+}
+
+export default class extends React.Component<{}, State> {
+
+    constructor(props: any) {
+        super(props);
+
+        this.state = {
+            collapsed: false
+        };
+
+        this.collapse = this.collapse.bind(this);
+    }
+
+    collapse() {
+        this.setState({ collapsed: !this.state.collapsed });
+    }
+
     render() {
         return(
             <nav className="navigation">
                 <ul className="navigation__ul">
-                    <li>
-                        <Link name="HOME" path="/" img="homepage"/>
-                        <Link name="MY WORK" path="/projects" img="project"/>
-                        <Link name="ABOUT" path="/about" img="profile"/>
-                        <Link name="CONTACT" path="/contact" img="contact"/>
-                    </li>
+                    <div className="collapse-menu" onClick={this.collapse}>{this.state.collapsed ? "☰" : "✕"}</div>
+                    <div className={`ul__links ${this.state.collapsed ? "closed" : ""}`}>
+                        <li>
+                            <Link name="HOME" path="/" img="homepage"/>
+                        </li>
+                        <li>
+                            <Link name="MY WORK" path="/projects" img="project"/>
+                        </li>
+                        <li>
+                            <Link name="ABOUT" path="/about" img="profile"/>
+                        </li>
+                        <li>
+                            <Link name="CONTACT" path="/contact" img="contact"/>
+                        </li>
+                    </div>
                 </ul>
             </nav>
         );
