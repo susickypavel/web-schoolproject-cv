@@ -49,7 +49,7 @@ export default class ContactPage extends React.Component<Props, State> {
         return(
             <div>
                 {this.state.pending ? this.renderSpinner() : null}
-                <img src={require("../assets/images/logo.svg")} alt="logo" className="img-fluid mx-auto d-block mt-3"/>
+                <img src={require("../assets/images/logo.svg")} alt="logo" className="img-fluid mx-auto d-block mt-3 fadeIn"/>
                 <ContactForm onSubmit={this.handleSubmit}/>
             </div>
         );

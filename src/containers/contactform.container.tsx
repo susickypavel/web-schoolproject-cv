@@ -12,10 +12,10 @@ const renderField = (field: WrappedFieldProps) => {
                 type={field.type}
                 placeholder={field.label}
                 {...field.input}
-                className={`form-control ${touched ? error == undefined ? "is-valid" : "is-invalid" : ""}`}
+                className={`form-control widthIn rbt-light ${touched ? error == undefined ? "is-valid" : "is-invalid" : ""}`}
             />
-            <span className="invalid-feedback">{touched ? error : null}</span>
-            <span className="valid-feedback">{touched && error == undefined ? "That's right!" : null}</span>
+            <span className="invalid-feedback rbt-bold">{touched ? error : null}</span>
+            <span className="valid-feedback rbt-bold">{touched && error == undefined ? "That's right!" : null}</span>
         </div>
     );
 };
@@ -27,12 +27,12 @@ const renderTextArea = (field: WrappedFieldProps) => {
     return(
         <div>
             <textarea
-                className={`form-control contactForm-textarea ${touched ? error == undefined ? "is-valid" : "is-invalid" : ""}`}
+                className={`form-control contactForm-textarea rbt-light ${touched ? error == undefined ? "is-valid" : "is-invalid" : ""}`}
                 placeholder={field.label}
                 {...field.input}
             />
-            <span className="invalid-feedback">{touched ? error : null}</span>
-            <span className="valid-feedback">{touched && error == undefined ? "That's right!" : null}</span>
+            <span className="invalid-feedback rbt-bold">{touched ? error : null}</span>
+            <span className="valid-feedback rbt-bold">{touched && error == undefined ? "That's right!" : null}</span>
         </div>
     );
 };

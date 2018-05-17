@@ -40,7 +40,7 @@ export default class extends React.Component<IProps, IState> {
             <li>
                 <div className={this.state.activeClass}>{this.props.tip}</div>
                 <a href={this.props.link} onMouseEnter={this.switchOnPopUp} onMouseLeave={this.switchOffPopUp}>
-                    <img src={require(`../assets/icons/social/${this.props.name}.svg`)} alt={this.props.name} width="48" height="48" className={`personality__link ${this.props.color}`} />
+                    <img src={require(`../assets/icons/social/${this.props.name}.svg`)} alt={this.props.name} width="48" height="48" className={`personality__link border border-dark ${this.props.color}`} />
                 </a>
             </li>
         );

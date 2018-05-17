@@ -1,13 +1,13 @@
-@import "imports.less";
-
 @coolblack: #313638;
 @coolorange: #F09D51;
 @coolgray: #E0DFD5;
 @coolwhite: #E8E9EB;
 @tomato: lightgray;
 
+@navigationBar-hover-color: #e9ba8e;
+
 body {
-    background: @tomato;
+    background-image: @tomato;
     margin: 0;
     overflow: hidden;
 }
@@ -20,6 +20,10 @@ body {
     text-align: center;
 
     font-size: 32px;
+}
+
+.collapse-menu:hover {
+    cursor: pointer;
 }
 
 nav {
@@ -53,7 +57,9 @@ nav {
     min-height: 100px;
     min-width: 100px;
 
-    background: @coolgray;
+    background-color: @coolgray;
+
+    transition: background-color 0.35s linear;
 }
 
 .navLinkImg {
@@ -65,8 +71,10 @@ nav {
 }
 
 .navigation__item:hover {
+    background-color: @navigationBar-hover-color;
+
     text-decoration: none;
-    color: black;
+    color: black
 }
 
 .activeNavLink {
@@ -75,8 +83,6 @@ nav {
 
 /* HOMEPAGE */
 .homePage {
-    background: @tomato;
-
     min-height: 100vh;
 
     text-align: center;
@@ -101,8 +107,6 @@ nav {
 }
 
 .personality__links li a {
-    border: 1px solid black;
-
     display: inline-block;
 }
 
@@ -282,3 +286,5 @@ nav {
 }
 
 @import "responsive.less";
+@import "imports.less";
+@import "animations.less";

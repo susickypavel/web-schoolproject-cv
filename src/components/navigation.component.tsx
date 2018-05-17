@@ -25,7 +25,7 @@ export default class extends React.Component<{}, State> {
         return(
             <nav className="navigation">
                 <ul className="navigation__ul">
-                    <div className="collapse-menu" onClick={this.collapse}>{this.state.collapsed ? "☰" : "✕"}</div>
+                    <div className="collapse-menu border-bottom border-secondary" onClick={this.collapse}>{this.state.collapsed ? "☰" : "✕"}</div>
                     <div className={`ul__links ${this.state.collapsed ? "closed" : ""}`}>
                         <li>
                             <Link name="HOME" path="/" img="homepage"/>
