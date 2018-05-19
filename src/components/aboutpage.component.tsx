@@ -8,8 +8,32 @@ export default class AboutPage extends React.Component {
     render() {
         return(
             <div>
-                About Page
+                <ProgressBar progress="100%" name="Test" backgroundColor="bg-success" />
+                <ProgressBar progress="75%" name="Test" backgroundColor="bg-danger" />
+                <ProgressBar progress="30%" name="Test" backgroundColor="bg-warning" />
             </div>
         );
     }
 }
+
+interface PropsSTC {
+    backgroundColor: string;
+    progress: string;
+    name: string;
+}
+
+const ProgressBar = (props: PropsSTC) => {
+    const styles = {
+        width: props.progress
+    };
+
+    return(
+        <div>
+            <h2>{props.name}</h2>
+
+            <div className="progress border border-dark widthIn">
+                <div className={`progress-bar progress-bar-striped progress-bar-animated ${props.backgroundColor}`} style={styles} />
+            </div>
+        </div>
+    );
+};

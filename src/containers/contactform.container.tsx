@@ -7,12 +7,13 @@ const renderField = (field: WrappedFieldProps) => {
     const { touched, error, visited } = field.meta;
 
     return(
-        <div className={`form-group ${field.style}`}>
+        <div className={`form-group text-left ${field.style}`}>
             <input
                 type={field.type}
                 placeholder={field.label}
                 {...field.input}
                 className={`form-control widthIn rbt-light ${touched ? error == undefined ? "is-valid" : "is-invalid" : ""}`}
+                autoComplete="off"
             />
             <span className="invalid-feedback rbt-bold">{touched ? error : null}</span>
             <span className="valid-feedback rbt-bold">{touched && error == undefined ? "That's right!" : null}</span>
@@ -25,7 +26,7 @@ const renderTextArea = (field: WrappedFieldProps) => {
     const { touched, error } = field.meta;
 
     return(
-        <div>
+        <div className="text-left">
             <textarea
                 className={`form-control contactForm-textarea rbt-light ${touched ? error == undefined ? "is-valid" : "is-invalid" : ""}`}
                 placeholder={field.label}

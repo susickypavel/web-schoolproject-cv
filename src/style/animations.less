@@ -25,3 +25,23 @@
         width: 100%;
     }
 }
+
+/* REACT TRANSITION GROUP */
+
+.example-enter {
+    width: 0px;
+}
+ 
+.example-enter.example-enter-active {
+    width: 100%;
+    transition: width .55s cubic-bezier(1.0, 0.75, 0.55, 0.35);
+}
+ 
+.example-exit {
+    opacity: 1;
+}
+ 
+.example-exit.example-exit-active {
+    opacity: 0.01;
+    transition: opacity .5s ease-in-out;
+}
