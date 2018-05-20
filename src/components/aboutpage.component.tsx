@@ -8,9 +8,9 @@ export default class AboutPage extends React.Component {
     render() {
         return(
             <div>
-                <ProgressBar progress="100%" name="Test" backgroundColor="bg-success" />
-                <ProgressBar progress="75%" name="Test" backgroundColor="bg-danger" />
-                <ProgressBar progress="30%" name="Test" backgroundColor="bg-warning" />
+                <ProgressBar progress="100%" name="HTML" backgroundColor="bg-success" />
+                <ProgressBar progress="75%" name="CSS" backgroundColor="bg-danger" />
+                <ProgressBar progress="30%" name="JAVASCRIPT" backgroundColor="bg-warning" />
             </div>
         );
     }
@@ -31,7 +31,7 @@ const ProgressBar = (props: PropsSTC) => {
         <div>
             <h2>{props.name}</h2>
 
-            <div className="progress border border-dark widthIn">
+            <div className="progress border border-dark">
                 <div className={`progress-bar progress-bar-striped progress-bar-animated ${props.backgroundColor}`} style={styles} />
             </div>
         </div>

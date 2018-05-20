@@ -18,6 +18,9 @@
     "object-literal-sort-keys": false,
     "max-line-length": false,
     "no-submodule-imports": false,
-    "interface-name": false
+    "interface-name": false,
+    "jsx-no-lambda": false,
+    "jsx-no-multiline-js": false,
+    "jsx-alignment": false
   }
 }

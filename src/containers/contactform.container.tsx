@@ -12,7 +12,7 @@ const renderField = (field: WrappedFieldProps) => {
                 type={field.type}
                 placeholder={field.label}
                 {...field.input}
-                className={`form-control widthIn rbt-light ${touched ? error == undefined ? "is-valid" : "is-invalid" : ""}`}
+                className={`form-control rbt-light ${touched ? error == undefined ? "is-valid" : "is-invalid" : ""}`}
                 autoComplete="off"
             />
             <span className="invalid-feedback rbt-bold">{touched ? error : null}</span>

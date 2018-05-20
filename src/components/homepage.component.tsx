@@ -6,7 +6,7 @@ import { Ticket } from "./ticket.component";
 export  default class extends React.Component {
     render() {
         return(
-            <div className="homePage">
+            <div>
                 <div className="jumbotron container shadow homepage__personality">
                     <h1>HI, I'M PAVEL SUŠICKÝ</h1>
                     <p className="lead">Young web developer from Czech Republic!</p>
@@ -25,7 +25,6 @@ export  default class extends React.Component {
                         <Ticket offset="offset-md-1" name="SCHOOL" badgeType="secondary" badge="WEB" content="My first website for school project. January 2018. Worktools: Visual Studio Code, GIMP." />
                     </div>
                 </div>
-
             </div>
         );
     }

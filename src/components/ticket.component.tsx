@@ -31,7 +31,7 @@ export class TicketModal extends React.Component<IProps> {
 
 export const Ticket = (props: any) => {
     return(
-        <div className={`col-sm jumbotron ticket fadeIn ${props.offset}`}>
+        <div className={`col-sm jumbotron ticket ${props.offset}`}>
             <h2>{props.name} <span className={`badge badge-${props.badgeType}`}>{props.badge}</span></h2>
             <hr/>
 

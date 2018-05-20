@@ -1,5 +1,6 @@
 import * as React from "react";
-import { BrowserRouter, Route, Switch, Link } from "react-router-dom";
+import { BrowserRouter, Route, Switch, Router } from "react-router-dom";
+import { TransitionGroup, CSSTransition } from "react-transition-group";
 
 /* Components */
 import Homepage from "./homepage.component";
@@ -12,15 +13,26 @@ export default class Index extends React.Component {
     render() {
         return(
             <BrowserRouter>
-                <div>
-                    <Navigation />
-                    <Switch>
-                        <Route path="/projects" component={Projectpage}/>
-                        <Route path="/contact" component={ContactPage}/>
-                        <Route path="/about" component={AboutPage}/>
-                        <Route exact={true} path="/" component={Homepage}/>
-                    </Switch>
-                </div>
+                <Route render={({ location }) => (
+                    <div>
+                        <Navigation />
+
+                        <TransitionGroup>
+                            <CSSTransition
+                                key={location.key}
+                                timeout={1000}
+                                classNames="fade"
+                                >
+                                <Switch location={location}>
+                                    <Route path="/projects" component={Projectpage}/>
+                                    <Route path="/contact" component={ContactPage}/>
+                                    <Route path="/about" component={AboutPage}/>
+                                    <Route exact={true} path="/" component={Homepage}/>
+                                </Switch>
+                            </CSSTransition>
+                        </TransitionGroup>
+                    </div>
+                )} />
             </BrowserRouter>
         );
     }
