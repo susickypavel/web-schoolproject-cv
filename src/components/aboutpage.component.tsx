@@ -1,6 +1,5 @@
 import * as React from "react";
 
-
 // Make tickets with progress bar of each framework etc. i'm using right now
 // Animate the progress bar? Filling?
 
@@ -8,9 +7,17 @@ export default class AboutPage extends React.Component {
     render() {
         return(
             <div>
-                <ProgressBar progress="100%" name="HTML" backgroundColor="bg-success" />
-                <ProgressBar progress="75%" name="CSS" backgroundColor="bg-danger" />
-                <ProgressBar progress="30%" name="JAVASCRIPT" backgroundColor="bg-warning" />
+                <div className="row">
+                    <div className="col-sm">
+                        <ProgressBar progress="99%" name="HTML" backgroundColor="bg-success" />
+                    </div>
+                    <div className="col-sm">
+                        <ProgressBar progress="87%" name="CSS" backgroundColor="bg-danger" />
+                    </div>
+                    <div className="col-sm">
+                        <ProgressBar progress="95%" name="JAVASCRIPT" backgroundColor="bg-warning" />
+                    </div>
+                </div>
             </div>
         );
     }
@@ -29,7 +36,7 @@ const ProgressBar = (props: PropsSTC) => {
 
     return(
         <div>
-            <h2>{props.name}</h2>
+            <h2 className="font-h2">{props.name}</h2>
 
             <div className="progress border border-dark">
                 <div className={`progress-bar progress-bar-striped progress-bar-animated ${props.backgroundColor}`} style={styles} />

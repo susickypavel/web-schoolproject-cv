@@ -11,7 +11,7 @@ export default class extends React.Component<{}, State> {
         super(props);
 
         this.state = {
-            collapsed: false
+            collapsed: true
         };
 
         this.collapse = this.collapse.bind(this);

@@ -8,7 +8,7 @@ export  default class extends React.Component {
         return(
             <div>
                 <div className="jumbotron container shadow homepage__personality">
-                    <h1>HI, I'M PAVEL SUŠICKÝ</h1>
+                    <h1 className="font-h1">HI, I'M PAVEL SUŠICKÝ</h1>
                     <p className="lead">Young web developer from Czech Republic!</p>
                     <hr/>
                     <ul className="personality__links">
