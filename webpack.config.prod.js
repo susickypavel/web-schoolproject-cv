@@ -8,8 +8,7 @@ module.exports = {
 
     output: {
         filename: "bundle.[chunkhash].js",
-        path: path.resolve(__dirname, "dist"),
-        publicPath: "/"
+        path: path.resolve(__dirname, "dist")
     },
 
     resolve: {

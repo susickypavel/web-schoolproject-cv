@@ -6,7 +6,7 @@ import { Ticket } from "./ticket.component";
 export  default class extends React.Component {
     render() {
         return(
-            <div>
+            <div className="mt-5">
                 <div className="jumbotron container shadow homepage__personality">
                     <h1 className="font-h1">HI, I'M PAVEL SUŠICKÝ</h1>
                     <p className="lead">Young web developer from Czech Republic!</p>

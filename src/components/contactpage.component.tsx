@@ -47,9 +47,9 @@ export default class ContactPage extends React.Component<Props, State> {
 
     render() {
         return(
-            <div>
+            <div className="mt-4">
                 {this.state.pending ? this.renderSpinner() : null}
-                <img src={require("../assets/images/logo.svg")} alt="logo" className="img-fluid mx-auto d-block mt-3" height="500" width="500"/>
+                <img src={require("../assets/images/logo.svg")} alt="logo" className="img-fluid mx-auto d-block" height="500" width="500"/>
                 <ContactForm onSubmit={this.handleSubmit}/>
             </div>
         );

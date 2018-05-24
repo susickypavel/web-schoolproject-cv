@@ -6,7 +6,7 @@ import * as React from "react";
 export default class AboutPage extends React.Component {
     render() {
         return(
-            <div>
+            <div className="container mt-5">
                 <div className="row">
                     <div className="col-sm">
                         <ProgressBar progress="99%" name="HTML" backgroundColor="bg-success" />
@@ -35,7 +35,7 @@ const ProgressBar = (props: PropsSTC) => {
     };
 
     return(
-        <div>
+        <div className="border border-secondary p-3">
             <h2 className="font-h2">{props.name}</h2>
 
             <div className="progress border border-dark">
