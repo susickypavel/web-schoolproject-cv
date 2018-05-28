@@ -29,7 +29,15 @@ export class TicketModal extends React.Component<IProps> {
     }
 }
 
-export const Ticket = (props: any) => {
+interface ITicket {
+    name: string;
+    badge: string;
+    badgeType: string;
+    content: string;
+    offset?: string;
+}
+
+export const Ticket = (props: ITicket) => {
     return(
         <div className={`col-sm jumbotron ticket ${props.offset}`}>
             <h2 className="font-h2">{props.name} <span className={`badge badge-${props.badgeType}`}>{props.badge}</span></h2>

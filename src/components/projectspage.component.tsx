@@ -84,7 +84,7 @@ class ProjectPage extends React.Component<IProps, IState> {
 
 const CheckBox = (props: IPropsSTC) => {
     return(
-        <div className="d-inline">
+        <div className="d-inline mx-1">
             <span className={`badge badge-${props.badgeType}`}>{props.value}</span>
             <input type="checkbox" value={props.value} onChange={props.handler} defaultChecked={true}/>
         </div>

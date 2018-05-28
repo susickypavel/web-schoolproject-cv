@@ -20,9 +20,9 @@ export  default class extends React.Component {
 
                 <div className="container">
                     <div className="row">
-                        <Ticket offset="" name="LD40" badgeType="info" badge="GAME" content="My second entry to a game jam Ludum Dare. December 2017. Worktools: Unity, Visual Studio, Bosca ceoil, GIMP." />
-                        <Ticket offset="offset-md-1" name="LD39" badgeType="info" badge="GAME" content="My first entry to a game jam Ludum Dare. August 2017. Worktools: Unity, Visual Studio, Blender." />
-                        <Ticket offset="offset-md-1" name="SCHOOL" badgeType="secondary" badge="WEB" content="My first website for school project. January 2018. Worktools: Visual Studio Code, GIMP." />
+                        <Ticket name="LD40" badgeType="info" badge="GAME" content="My second entry to a game jam Ludum Dare. December 2017. Worktools: Unity, Visual Studio, Bosca ceoil, GIMP." />
+                        <Ticket offset="offset-sm-1" name="LD39" badgeType="info" badge="GAME" content="My first entry to a game jam Ludum Dare. August 2017. Worktools: Unity, Visual Studio, Blender." />
+                        <Ticket offset="offset-sm-1" name="SCHOOL" badgeType="secondary" badge="WEB" content="My first website for school project. January 2018. Worktools: Visual Studio Code, GIMP." />
                     </div>
                 </div>
             </div>

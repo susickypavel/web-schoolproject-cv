@@ -27,6 +27,13 @@ export default class AboutPage extends React.Component {
                         test={["Nette", "Symfony"]}
                     />
                 </div>
+
+                <div className="jumbotron border border-secondary shadow">
+                    <h3 className="font-h3">EDUCATION</h3>
+                        <p className="rbt-light">At the moment i'm studying information technology at high school called <a href="http://ssps.cz">SSPŠ</a>.</p>
+                    <h3 className="font-h3">HOBBIES</h3>
+                        <p className="rbt-light">I spend a lot of time playing games, programming, but i like many sports.</p>
+                </div>
             </div>
         );
     }
@@ -57,7 +64,7 @@ const ProgressBar = (props: PropsSTC) => {
                     {
                         props.test.map((item: string) => {
                             return(
-                                <li className="list-group-item d-flex justify-content-between align-items-center rbt-light" key={item}>
+                                <li className="list-group-item d-flex justify-content-between align-items-center rbt-light bg-hover-gray" key={item}>
                                     {item}
                                 </li>
                             );
