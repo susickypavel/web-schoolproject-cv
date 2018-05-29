@@ -6,7 +6,15 @@ import * as React from "react";
 export default class AboutPage extends React.Component {
     render() {
         return(
-            <div className="container">
+            <div className="container my-3">
+
+                <div className="jumbotron border border-secondary shadow">
+                    <h3 className="font-h3">EDUCATION</h3>
+                        <p className="rbt-light">At the moment i'm studying information technology at high school called <a href="http://ssps.cz">SSPŠ</a>.</p>
+                    <h3 className="font-h3">HOBBIES</h3>
+                        <p className="rbt-light">I spend a lot of time playing games, programming, but i like many sports.</p>
+                </div>
+
                 <div className="row">
                     <ProgressBar
                         progress="95%"
@@ -27,13 +35,6 @@ export default class AboutPage extends React.Component {
                         test={["Nette", "Symfony"]}
                     />
                 </div>
-
-                <div className="jumbotron border border-secondary shadow">
-                    <h3 className="font-h3">EDUCATION</h3>
-                        <p className="rbt-light">At the moment i'm studying information technology at high school called <a href="http://ssps.cz">SSPŠ</a>.</p>
-                    <h3 className="font-h3">HOBBIES</h3>
-                        <p className="rbt-light">I spend a lot of time playing games, programming, but i like many sports.</p>
-                </div>
             </div>
         );
     }
@@ -52,7 +53,7 @@ const ProgressBar = (props: PropsSTC) => {
     };
 
     return(
-        <div className="col-sm my-3">
+        <div className="col-sm">
             <div className="border border-secondary p-3 mh-320 shadow">
                 <h2 className="font-h2">{props.name}</h2>
 

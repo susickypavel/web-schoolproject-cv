@@ -1,5 +1,5 @@
 import * as React from "react";
-import { BrowserRouter, Route, Switch, Router } from "react-router-dom";
+import { BrowserRouter, Route, Switch, Router, HashRouter } from "react-router-dom";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 
 /* Components */
@@ -12,7 +12,7 @@ import Navigation from "./navigation.component";
 export default class Index extends React.Component {
     render() {
         return(
-            <BrowserRouter>
+            <HashRouter>
                 <Route render={({ location }) => (
                     <div>
                         <Navigation />
@@ -33,7 +33,7 @@ export default class Index extends React.Component {
                         </TransitionGroup>
                     </div>
                 )} />
-            </BrowserRouter>
+            </HashRouter>
         );
     }
 }
