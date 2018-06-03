@@ -7,16 +7,15 @@ const renderField = (field: WrappedFieldProps) => {
     const { touched, error, visited } = field.meta;
 
     return(
-        <div className={`form-group text-left ${field.style}`}>
+        <div>
             <input
                 type={field.type}
                 placeholder={field.label}
                 {...field.input}
-                className={`form-control rbt-light ${touched ? error == undefined ? "is-valid" : "is-invalid" : ""}`}
                 autoComplete="off"
             />
-            <span className="invalid-feedback rbt-bold">{touched ? error : null}</span>
-            <span className="valid-feedback rbt-bold">{touched && error == undefined ? "That's right!" : null}</span>
+            <span>{touched ? error : null}</span>
+            <span>{touched && error == undefined ? "That's right!" : null}</span>
         </div>
     );
 };
@@ -26,14 +25,13 @@ const renderTextArea = (field: WrappedFieldProps) => {
     const { touched, error } = field.meta;
 
     return(
-        <div className="text-left">
+        <div>
             <textarea
-                className={`form-control contactForm-textarea rbt-light ${touched ? error == undefined ? "is-valid" : "is-invalid" : ""}`}
                 placeholder={field.label}
                 {...field.input}
             />
-            <span className="invalid-feedback rbt-bold">{touched ? error : null}</span>
-            <span className="valid-feedback rbt-bold">{touched && error == undefined ? "That's right!" : null}</span>
+            <span>{touched ? error : null}</span>
+            <span>{touched && error == undefined ? "That's right!" : null}</span>
         </div>
     );
 };
@@ -43,21 +41,19 @@ const ContactForm = (props: any) => {
     const { handleSubmit } = props;
 
     return(
-        <form onSubmit={handleSubmit} className="container mt-3">
-            <div className="form-row">
+        <form onSubmit={handleSubmit}>
+            <div>
                 <Field
                     name="email"
                     component={renderField}
                     type="text"
                     label="YOUR EMAIL"
-                    style="col-md-6"
                 />
                 <Field
                     name="name"
                     component={renderField}
                     type="text"
                     label="YOUR NAME"
-                    style="col-md-6"
                 />
             </div>
                 <Field
@@ -65,7 +61,7 @@ const ContactForm = (props: any) => {
                     component={renderTextArea}
                     label="YOUR MESSAGE"
                 />
-            <button type="submit" className="btn btn-primary mt-3">SEND</button>
+            <button type="submit">SEND</button>
         </form>
     );
 };

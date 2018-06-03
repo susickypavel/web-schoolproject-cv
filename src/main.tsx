@@ -6,7 +6,7 @@ import { initializeStore } from "./store";
 import Index from "./components/index.component";
 
 /* Styles */
-import "./style/main.less";
+import "./style/mainStyles.less";
 
 ReactDOM.render(
     <Provider store={initializeStore()}>

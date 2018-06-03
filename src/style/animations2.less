@@ -1,0 +1,72 @@
+@keyframes flowUpIn {
+    0% {
+        transform: translateY(-100%);
+    }
+
+    100% {
+        transform: translateY(0%);
+    }
+}
+
+.widthIn-idle {
+    overflow: hidden;
+    width: 0 !important;
+    transition: width 0.5s ease-in-out;
+}
+
+.widthIn-transition {
+    overflow: hidden;
+    width: 250px !important;
+    transition: width 0.5s ease-in-out;
+}
+
+.content-moved {
+    margin-left: @sidebar-width;
+    transition: margin-left .5s ease-in-out;
+}
+
+.content-idle {
+    margin-left: 0px;
+    transition: margin-left .5s ease-in-out;
+}
+
+/* React transition group */
+
+// List of projects
+.example-enter {
+    opacity: 0;
+}
+ 
+.example-enter.example-enter-active {
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+}
+ 
+.example-exit {
+    opacity: 1;
+}
+ 
+.example-exit.example-exit-active {
+    opacity: 0.01;
+    transition: opacity .5s ease-in-out;
+}
+
+// Between pages
+.fade-enter {
+    height: 0;
+    opacity: 0;
+}
+
+.fade-enter.fade-enter-active {
+    opacity: 1;
+    transition: opacity 1s ease-in-out 0.9s;
+}
+
+.fade-exit {
+    opacity: 1;
+}
+
+.fade-exit.fade-exit-active {
+    opacity: 0;
+    transition: opacity 1s ease-out;
+}

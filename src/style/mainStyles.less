@@ -1,0 +1,199 @@
+@navbar: #181b1f;
+@sidebar: #272b33;
+@yellow: #ffd933;
+@red: #f62a66;
+
+@navigation-height: 70px;
+@sidebar-width: 250px;
+
+/* SCROLLBAR */
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}
+
+/* HEADERS */
+h1 {
+    margin: 0;
+    font-size: 2em;
+
+    color: white;
+}
+
+/* NAVIGATION & SIDEBAR */
+.sidebar {  
+    position: fixed;
+    z-index: 20;
+    top: @navigation-height;
+
+    height: 100%;
+    max-width: @sidebar-width;
+    background-color: @sidebar;
+
+    color: @yellow;
+}
+
+.sidebar-toggle {
+    height: @navigation-height;
+    width: @navigation-height;
+    
+    min-height: @navigation-height;
+    min-width: @navigation-height;
+
+    font-size: 32px;
+    color: @yellow;
+    background-color: @sidebar;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition: background-color .2s linear;
+}
+
+.navbar-flex {
+    display: flex;
+    align-items: center;
+}
+
+.sidebar-toggle:hover {
+    cursor: pointer;
+
+    background-color: #11151a;
+    transition: background-color .2s linear;
+}
+
+.disableLink {
+    opacity: 0.5;
+}
+
+.activeLink img {
+    opacity: 1;
+    font-family: roboto-bold;
+}
+
+/* LISTS */
+.list-group-item-m {
+    width: 100%;
+}
+
+.list-group-item-m:hover {
+    background-color: @navbar;
+    transition: background-color .25s linear;
+}
+
+.list-group-item-m a {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: @navigation-height;
+}
+
+/* COLORS */
+.navbar-bg { background-color: @navbar; }
+.sidebar-bg { background-color: @sidebar; }
+.yellow-bg { background-color: @yellow; }
+
+
+html, body, #MOUNT, .full-height {
+    height: 100%;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+.height-70px {
+    height: @navigation-height;
+}
+
+input.checkbox-switch {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+    position: relative;
+    height: 20px;
+    width: 40px;
+    border-radius: 10px;
+    box-shadow: inset -20px 0px 0px 1px rgba(192, 192, 192, 0.5);
+    border: 1px solid rgba(192, 192, 192, 1);
+    outline: none;
+    transition: 0.2s;
+}
+  
+input.checkbox-switch:checked {
+    box-shadow: inset 20px 0px 0px 1px rgba(33, 150, 243, 0.5);
+    border: 1px solid rgba(33, 150, 243, 1);
+}
+  
+input.checkbox-switch::-ms-check {
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"; /* IE 8 */
+    filter: alpha(opacity=0); /* IE 5-7 */
+    opacity: 0;
+}
+
+.checkbox-name {
+    min-width: 100px;
+    font-size: 24px;
+}
+
+.checkbox-holder {
+    text-align: center;
+    display: inline-block;
+}
+
+.ticket {
+    overflow: hidden;
+    max-height: 300px;
+    width: 300px;
+}
+
+.card-m {
+    flex: 0 1 350px;
+    transition: transform .1s ease-in-out;
+}
+
+.card-m:hover {
+    transform: translateY(-10px);
+    transition: transform .3s ease-in-out;
+    cursor: pointer;
+}
+
+/* backgrounds by badge type */
+.GAME {
+    background-color: @yellow;
+}
+
+.WEB {
+    background-color: #cd00cd;
+}
+
+.activeTicket {
+    animation: flowUpIn 0.5s ease-in-out;
+    animation-iteration-count: 1;
+}
+
+.maxWidth-300 {
+    max-width: 300px;
+}
+
+@import "animations2.less";
+@import "responsive2.less";
+@import "imports2.less";

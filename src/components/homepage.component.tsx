@@ -1,29 +1,23 @@
 import * as React from "react";
 
 import Link from "./sociallink.component";
-import { Ticket } from "./ticket.component";
 
 export  default class extends React.Component {
     render() {
         return(
-            <div className="mt-5">
-                <div className="jumbotron container shadow homepage__personality">
-                    <h1 className="font-h1">HI, I'M PAVEL SUŠICKÝ</h1>
-                    <p className="lead">Young web developer from Czech Republic!</p>
-                    <hr/>
-                    <ul className="personality__links">
-                        <Link name="mail" tip="pavels.sus@gmail.com" color="red" link="#"/>
-                        <Link name="linkedin" tip="Pavel Sušický" color="lime" link="#"/>
-                        <Link name="github" tip="Thesoreon" color="cyan" link="https://github.com/Thesoreon"/>
-                    </ul>
+            <div>
+                <div className="embed-responsive embed-responsive-16by9">
+                    <iframe className="embed-responsive-item" src="https://www.youtube.com/embed/z1PSbDmV8Gw" />
                 </div>
+                <div className="m-3">
+                    <h2 className="font-big rbt-bold">Welcome!</h2>
 
-                <div className="container">
-                    <div className="row">
-                        <Ticket name="LD40" badgeType="info" badge="GAME" content="My second entry to a game jam Ludum Dare. December 2017. Worktools: Unity, Visual Studio, Bosca ceoil, GIMP." />
-                        <Ticket offset="offset-sm-1" name="LD39" badgeType="info" badge="GAME" content="My first entry to a game jam Ludum Dare. August 2017. Worktools: Unity, Visual Studio, Blender." />
-                        <Ticket offset="offset-sm-1" name="SCHOOL" badgeType="secondary" badge="WEB" content="My first website for school project. January 2018. Worktools: Visual Studio Code, GIMP." />
-                    </div>
+                    <p>I would like to introduce you to my Curriculum vitae. At the start of our exploring, let's see who am i! </p>
+
+                    <h2 className="font-big rbt-bold">Who am i?</h2>
+
+                    <p>I'm seventeen years old student &amp; Junior web developer from Czech Republic interested in information technology, mainly programming industry.</p>
+
                 </div>
             </div>
         );

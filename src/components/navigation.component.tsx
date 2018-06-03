@@ -1,6 +1,8 @@
 import * as React from "react";
 import { NavLink } from "react-router-dom";
 
+import SocialLink from "./sociallink.component";
+
 interface State {
     collapsed: boolean;
 }
@@ -11,7 +13,7 @@ export default class extends React.Component<{}, State> {
         super(props);
 
         this.state = {
-            collapsed: true
+            collapsed: false
         };
 
         this.collapse = this.collapse.bind(this);
@@ -20,37 +22,56 @@ export default class extends React.Component<{}, State> {
     collapse() {
         this.setState({ collapsed: !this.state.collapsed });
     }
-
+    // "☰" : "✕"
     render() {
         return(
-            <nav className="navigation">
-                <ul className="navigation__ul">
-                    <div className="collapse-menu border-bottom border-secondary" onClick={this.collapse}>{this.state.collapsed ? "☰" : "✕"}</div>
-                    <div className={`ul__links ${this.state.collapsed ? "closed" : ""}`}>
-                        <li>
-                            <Link name="HOME" path="/" img="homepage"/>
-                        </li>
-                        <li>
-                            <Link name="MY WORK" path="/projects" img="project"/>
-                        </li>
-                        <li>
-                            <Link name="ABOUT" path="/about" img="profile"/>
-                        </li>
-                        <li>
-                            <Link name="CONTACT" path="/contact" img="contact"/>
-                        </li>
-                    </div>
-                </ul>
-            </nav>
+            <div className="full-height">
+                <div className="w-100 navbar-bg height-70px sticky-top navbar-flex">
+                    <div className="sidebar-toggle" onClick={this.collapse}>{this.state.collapsed ? "☰" : "✕"}</div>
+                    <NavLink to="/">
+                        <img src={require("../assets/images/logo.svg")} className="img-fluid mx-3 height-70px" alt="logo" width="70" height="70"/>
+                    </NavLink>
+                    <h1 className="rbt-bold">Pavel Sušický</h1>
+                </div>
+
+                <div className={`sidebar ${this.state.collapsed ? "widthIn-idle" : "widthIn-transition"}`}>
+                    <h2 className="my-3 ml-3 rbt-bold font-big">Navigation</h2>
+                    <ul className="list-group">
+                        <Link name="HOME" path="/" img="homepage-light"/>
+                        <Link name="MY WORK" path="/projects" img="project-light"/>
+                        <Link name="ABOUT" path="/about" img="profile-light"/>
+                        <Link name="CONTACT" path="/contact" img="contact-light"/>
+                    </ul>
+
+                    <h2 className="my-3 ml-3 rbt-bold font-big">Social Links</h2>
+
+                     <ul className="list-group">
+                        <SocialLink name="github" link="https://github.com/Thesoreon" desc="Thesoreon"/>
+                        <SocialLink name="linkedin" link="#" desc="Pavel Sušický"/>
+                    </ul>
+                </div>
+
+                <div className={`${this.state.collapsed ? "content-idle" : "content-moved"}`}>
+                    {this.props.children}
+                </div>
+            </div>
         );
     }
 }
 
-const Link = (props: any) => {
+interface ILink {
+    path: string;
+    img: string;
+    name: string;
+}
+
+const Link = (props: ILink) => {
     return(
-        <NavLink exact={true} to={props.path} className="navigation__item" activeClassName="activeNavLink">
-            <p>{props.name}</p>
-            <img src={require(`../assets/icons/${props.img}.svg`)} alt={props.img} width="65" height="65" className="navLinkImg"/>
-        </NavLink>
+        <li className="list-group-item-m height-70px">
+            <NavLink exact={true} to={props.path} className="text-light rbt-light" activeClassName="activeLink">
+                <img src={require(`../assets/icons/${props.img}.svg`)} alt={props.img} width="40" height="40" className="mx-3 disableLink"/>
+                <span>{props.name}</span>
+            </NavLink>
+        </li>
     );
 };

@@ -36,9 +36,9 @@ export default class ContactPage extends React.Component<Props, State> {
 
     renderSpinner() {
         return(
-            <div className="spinner">
-                <div className="spinner-holder">
-                    <div className="spinner-circle" />
+            <div>
+                <div>
+                    <div />
                     <p>Hold on please, we're sending your message</p>
                 </div>
             </div>
@@ -47,9 +47,8 @@ export default class ContactPage extends React.Component<Props, State> {
 
     render() {
         return(
-            <div className="mt-4">
+            <div className="m-3">
                 {this.state.pending ? this.renderSpinner() : null}
-                <img src={require("../assets/images/logo.svg")} alt="logo" className="img-fluid mx-auto d-block" height="500" width="500"/>
                 <ContactForm onSubmit={this.handleSubmit}/>
             </div>
         );

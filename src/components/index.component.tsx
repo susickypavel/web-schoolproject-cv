@@ -1,5 +1,5 @@
 import * as React from "react";
-import { BrowserRouter, Route, Switch, Router, HashRouter } from "react-router-dom";
+import { BrowserRouter, Route, Switch, Router } from "react-router-dom";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 
 /* Components */
@@ -12,15 +12,13 @@ import Navigation from "./navigation.component";
 export default class Index extends React.Component {
     render() {
         return(
-            <HashRouter>
+            <BrowserRouter>
                 <Route render={({ location }) => (
-                    <div>
-                        <Navigation />
-
+                    <Navigation >
                         <TransitionGroup>
                             <CSSTransition
                                 key={location.key}
-                                timeout={1000}
+                                timeout={1600}
                                 classNames="fade"
                                 >
                                 <Switch location={location}>
@@ -31,9 +29,9 @@ export default class Index extends React.Component {
                                 </Switch>
                             </CSSTransition>
                         </TransitionGroup>
-                    </div>
+                    </Navigation>
                 )} />
-            </HashRouter>
+            </BrowserRouter>
         );
     }
 }
