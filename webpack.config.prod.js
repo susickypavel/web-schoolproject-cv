@@ -51,7 +51,7 @@ module.exports = {
 
     plugins: [
         new HtmlWebpackPlugin({
-            title: "Production Build",
+            title: "Pavel Sušický | CV",
             minify: {
                 removeComments: true,
                 collapseWhitespace: true,

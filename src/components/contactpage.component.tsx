@@ -36,18 +36,17 @@ export default class ContactPage extends React.Component<Props, State> {
 
     renderSpinner() {
         return(
-            <div>
-                <div>
-                    <div />
-                    <p>Hold on please, we're sending your message</p>
-                </div>
+            <div className="spinner mb-3">
+                <div className="spinner-circle" />
+                <p className="rbt-bold mt-3">Hold on please, we're sending your message</p>
             </div>
         );
     }
 
     render() {
         return(
-            <div className="m-3">
+            <div className="mx-3">
+                <h2 className="rbt-bold font-big">Send me a mail with this working form!</h2>
                 {this.state.pending ? this.renderSpinner() : null}
                 <ContactForm onSubmit={this.handleSubmit}/>
             </div>

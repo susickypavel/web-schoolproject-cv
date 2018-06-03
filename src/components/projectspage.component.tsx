@@ -72,7 +72,7 @@ class ProjectPage extends React.Component<IProps, IState> {
 
     render() {
         return(
-            <div className="m-3">
+            <div className="mx-3">
             {
                 !this.props.activeProject.activated ?
                 <div>

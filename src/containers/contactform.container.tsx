@@ -7,15 +7,16 @@ const renderField = (field: WrappedFieldProps) => {
     const { touched, error, visited } = field.meta;
 
     return(
-        <div>
+        <div className="form-group col-sm">
             <input
                 type={field.type}
                 placeholder={field.label}
                 {...field.input}
                 autoComplete="off"
+                className={`font-medium rbt-light form-control ${touched ? error == undefined ? "is-valid" : "is-invalid" : ""}`}
             />
-            <span>{touched ? error : null}</span>
-            <span>{touched && error == undefined ? "That's right!" : null}</span>
+            <span className="invalid-feedback">{touched ? error : null}</span>
+            <span className="valid-feedback">{touched && error == undefined ? "That's right!" : null}</span>
         </div>
     );
 };
@@ -25,13 +26,14 @@ const renderTextArea = (field: WrappedFieldProps) => {
     const { touched, error } = field.meta;
 
     return(
-        <div>
+        <div className="form-group">
             <textarea
                 placeholder={field.label}
                 {...field.input}
+                className={`font-medium rbt-light height-300 form-control ${touched ? error == undefined ? "is-valid" : "is-invalid" : ""}`}
             />
-            <span>{touched ? error : null}</span>
-            <span>{touched && error == undefined ? "That's right!" : null}</span>
+            <span className="invalid-feedback">{touched ? error : null}</span>
+            <span className="valid-feedback">{touched && error == undefined ? "That's right!" : null}</span>
         </div>
     );
 };
@@ -42,7 +44,7 @@ const ContactForm = (props: any) => {
 
     return(
         <form onSubmit={handleSubmit}>
-            <div>
+            <div className="form-row">
                 <Field
                     name="email"
                     component={renderField}
@@ -61,7 +63,7 @@ const ContactForm = (props: any) => {
                     component={renderTextArea}
                     label="YOUR MESSAGE"
                 />
-            <button type="submit">SEND</button>
+            <button className="btn btn-primary" type="submit">SEND</button>
         </form>
     );
 };

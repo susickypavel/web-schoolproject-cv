@@ -194,6 +194,34 @@ input.checkbox-switch::-ms-check {
     max-width: 300px;
 }
 
+.height-300 {
+    height: 300px;
+}
+
+.spinner {
+    border: 1px solid black;
+    margin: 0 auto;
+    max-width: 300px;
+    height: 150px;
+
+    text-align: center;
+
+    border: 1px solid @navbar;
+    background-color: @sidebar;
+    color: @yellow;
+}
+
+.spinner-circle {
+    height: 50px;
+    width: 50px;
+    border: 3px solid gray;
+    border-left: 3px solid @yellow;
+    border-radius: 100%;
+
+    margin: 5px auto;
+    animation: spin 1s infinite linear;
+}
+
 @import "animations2.less";
 @import "responsive2.less";
 @import "imports2.less";

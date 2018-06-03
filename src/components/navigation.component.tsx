@@ -26,7 +26,7 @@ export default class extends React.Component<{}, State> {
     render() {
         return(
             <div className="full-height">
-                <div className="w-100 navbar-bg height-70px sticky-top navbar-flex">
+                <div className="w-100 navbar-bg height-70px sticky-top navbar-flex mb-3">
                     <div className="sidebar-toggle" onClick={this.collapse}>{this.state.collapsed ? "☰" : "✕"}</div>
                     <NavLink to="/">
                         <img src={require("../assets/images/logo.svg")} className="img-fluid mx-3 height-70px" alt="logo" width="70" height="70"/>
